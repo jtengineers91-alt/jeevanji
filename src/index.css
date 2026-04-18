@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 4% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 180 4% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 180 4% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 64 85% 42%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 180 4% 12%;
+    --secondary-foreground: 0 0% 85%;
+
+    --muted: 180 3% 14%;
+    --muted-foreground: 180 5% 50%;
+
+    --accent: 64 70% 38%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 4% 15%;
+    --input: 180 4% 15%;
+    --ring: 64 85% 42%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 180 4% 7%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 64 85% 42%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 180 4% 14%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 180 4% 15%;
+    --sidebar-ring: 64 85% 42%;
+
+    /* Custom tokens - Parimatch style */
+    --neon-glow: 64 85% 42%;
+    --neon-purple: 270 60% 55%;
+    --neon-blue: 200 80% 50%;
+    --neon-orange: 25 95% 55%;
+    --neon-red: 0 80% 50%;
+    --gold: 45 90% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(64 85% 42%), hsl(64 70% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(64 70% 38%), hsl(80 60% 30%));
+    --gradient-card: linear-gradient(145deg, hsl(180 4% 10%), hsl(180 4% 6%));
+    --shadow-neon: 0 0 20px hsl(64 85% 42% / 0.2), 0 0 40px hsl(64 85% 42% / 0.05);
+    --shadow-purple: 0 0 20px hsl(270 60% 55% / 0.3);
+  }
+
+  .light {
+    --background: 0 0% 97%;
+    --foreground: 180 4% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 180 4% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 4% 8%;
+
+    --primary: 64 85% 38%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 60 10% 92%;
+    --secondary-foreground: 180 4% 20%;
+
+    --muted: 60 10% 94%;
+    --muted-foreground: 180 5% 40%;
+
+    --accent: 64 60% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 60 10% 85%;
+    --input: 60 10% 85%;
+    --ring: 64 85% 38%;
+
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 180 4% 15%;
+    --sidebar-primary: 64 85% 38%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 60 10% 92%;
+    --sidebar-accent-foreground: 180 4% 15%;
+    --sidebar-border: 60 10% 85%;
+    --sidebar-ring: 64 85% 38%;
+
+    --neon-glow: 64 85% 38%;
+    --neon-purple: 270 60% 50%;
+    --neon-blue: 200 80% 45%;
+    --neon-orange: 25 95% 50%;
+    --neon-red: 0 80% 50%;
+    --gold: 45 90% 45%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(64 85% 38%), hsl(64 70% 32%));
+    --gradient-accent: linear-gradient(135deg, hsl(64 70% 35%), hsl(80 60% 28%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(60 10% 96%));
+    --shadow-neon: 0 4px 14px hsl(64 85% 38% / 0.15);
+    --shadow-purple: 0 4px 14px hsl(270 60% 50% / 0.15);
+  }
+
+  .dark {
+    /* Same as root - dark by default */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--neon-glow) / 0.6), 0 0 30px hsl(var(--neon-glow) / 0.3);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 10px hsl(var(--neon-purple) / 0.6), 0 0 30px hsl(var(--neon-purple) / 0.3);
+  }
+
+  .box-glow {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .box-glow-purple {
+    box-shadow: var(--shadow-purple);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .border-glow {
+    border-color: hsl(var(--neon-glow) / 0.3);
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .pm-card {
+    @apply rounded-lg border border-border/60 bg-card transition-all duration-200;
+  }
+
+  .pm-card:hover {
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+  }
+}

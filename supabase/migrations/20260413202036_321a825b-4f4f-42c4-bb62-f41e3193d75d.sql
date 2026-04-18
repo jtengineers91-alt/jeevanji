@@ -1,0 +1,2 @@
+ALTER TABLE public.game_configs DROP CONSTRAINT game_configs_game_type_check;
+ALTER TABLE public.game_configs ADD CONSTRAINT game_configs_game_type_check CHECK (game_type = ANY (ARRAY['rummy','color_trading','ball_pool','motm','ipl_prediction','fantasy','daily_winner']));

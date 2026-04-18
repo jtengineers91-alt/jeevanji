@@ -1,0 +1,1 @@
+ALTER TABLE public.fantasy_players ADD COLUMN image_url text;
